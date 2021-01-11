@@ -2,6 +2,8 @@ import mouse
 import random
 import time
 
+print(f"move your mouse into the upper left section of your screen now...")
+print(f"to stop the program, just move the mouse around a lot, until the program stops.")
 time.sleep(3)
 origin = mouse.get_position()
 bounds = (500, 500)
@@ -22,7 +24,7 @@ while True:
     loc = mouse.get_position()
     if abs(loc[1] - next_y) > 10 or abs(loc[0] - next_x) > 10:
         print("EXIT BECAUSE MOUSE WAS MOVED")
-        exit(0)
+        exit(1)
     delay = (random.randint(100, 200) + random.randint(0, 100) + random.randint(0, 100) + random.randint(0, 100)) / 1000
     time.sleep(delay)
     last_y = next_y
